@@ -1,0 +1,60 @@
+.EntryList {
+  /**********************************
+    Horizontal scrolling
+  ***********************************/
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  /**********************************
+    Own properties
+  ***********************************/
+  margin: 30px 0;
+
+  /**********************************
+    Gradient overlay
+  ***********************************/
+  mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+}
+
+.EntryList__InnerContainer {
+  /**********************************
+    Contains:
+    - Entry
+  ***********************************/
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 20px 20px 0;
+  float: left;
+}
+
+/************************************************************************
+  Media queries for larger screens
+*************************************************************************/
+:root {
+  --column-count: 3;
+}
+
+@media screen and (min-width: 480px) {
+  .EntryList {
+    /**********************************
+      Clear horizontal scrolling props
+    ***********************************/
+    overflow-x: initial;
+    overflow-y: initial;
+    -webkit-overflow-scrolling: initial;
+    mask-image: initial;
+    -webkit-mask-image: initial;
+  }
+
+  .EntryList__InnerContainer {
+    /**********************************
+      Override flex with grid
+    ***********************************/
+    display: grid;
+    grid-template-columns: repeat(var(--column-count), 160px);
+    float: initial;
+    padding: initial;
+  }
+}

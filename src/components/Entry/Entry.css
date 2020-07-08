@@ -1,0 +1,70 @@
+.Entry {
+  /**********************************
+    Contains:
+    - Entry__Logo
+    - Entry__Name
+    - Entry__NumJobs
+  ***********************************/
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  /**********************************
+    Own properties
+  ***********************************/
+  width: fit-content;
+}
+
+/**********************************
+  Conditional margins
+***********************************/
+.Entry:first-child~.Entry {
+  margin-left: 10px;
+}
+
+.Entry__Logo {
+  background-color: white;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.3);
+}
+
+.Entry__Logo,
+.Entry__Logo__Image {
+  max-height: 128px;
+  max-width: 128px;
+  border-radius: 10px;
+}
+
+.Entry__Name {
+  font-size: 1.1em;
+  width: 128px;
+  margin-top: 5px;
+}
+
+.Entry__NumJobs {
+  color: rgb(56, 56, 56);
+}
+
+.Entry__NumJobs__Num {
+  color: black;
+}
+
+/************************************************************************
+  Media queries for larger screens
+*************************************************************************/
+@media screen and (min-width: 480px) {
+
+  .Entry,
+  .Entry:first-child~.Entry {
+    /**********************************
+      Add bottom spacing between grid 
+      rows, and center them
+    ***********************************/
+    margin: 0 auto 20px;
+    justify-content: center;
+
+    /**********************************
+      Clear unused prop
+    ***********************************/
+    flex-direction: initial;
+  }
+}
