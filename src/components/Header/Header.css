@@ -1,0 +1,68 @@
+.Header {
+  /**********************************
+    Stretch to parent (.App)
+  ***********************************/
+  width: 100%;
+
+  /**********************************
+    Own properties
+  ***********************************/
+  border-top: 4px solid var(--color-red-tomato);
+}
+
+.Header__Container {
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.Header__LogoTop,
+.Header__LogoTop--emphasize,
+.Header__LogoBottom {
+  position: relative;
+  background: -webkit-linear-gradient(90deg, #dc0000, #dc0000 30%, #ffb200 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Header__LogoTop:after,
+.Header__LogoTop--emphasize:after,
+.Header__LogoBottom:after {
+  background: none;
+  left: 0;
+  position: absolute;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0);
+  z-index: -1;
+}
+
+.Header__LogoTop {
+  font-size: 1.75em;
+  padding-right: 50px;
+}
+
+.Header__LogoTop:after {
+  content: "So";
+}
+
+.Header__LogoTop--emphasize {
+  font-style: italic;
+  padding-right: 5px;
+}
+
+.Header__LogoTop--emphasize:after {
+  content: "Hot";
+}
+
+.Header__LogoBottom {
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  display: inline;
+}
+
+.Header__LogoBottom:after {
+  content: "Right Now";
+  display: inline;
+}

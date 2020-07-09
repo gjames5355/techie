@@ -1,0 +1,16 @@
+.Fire {
+  position: absolute;
+  width: 40px;
+  right: -10px;
+  bottom: -10px;
+}
+
+.spark {
+  stroke: #ffd700;
+  fill: #ff0;
+}
+
+.flame {
+  stroke: #ff0;
+  fill: url('#flame-gradient');
+}
